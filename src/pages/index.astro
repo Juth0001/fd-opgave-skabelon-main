@@ -1,0 +1,91 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Hero.astro";
+---
+
+<Layout>
+  <Hero />
+  <main>
+    <section class="one">
+      <div class="wrapper-1">
+        <div class="card">
+          <div class="img">
+            <img src="src/data/images/teamwork.png" alt="teamwork" />
+          </div>
+          <div class="content">
+            <p>WE'LL WORK WITH YOU</p>
+            <h2>What To Expect</h2>
+            <p>
+              Our collaboration is built on transparency, efficiency, and
+              measurable results. Together, we create strategies tailored to
+              your unique needs and goals.
+            </p>
+            <li>
+              <p>
+                Collaborate to build actionable strategies that drive
+                sustainable growth and deliver tangible outcomes.
+              </p>
+              <p>
+                Identify opportunities to optimize processes and implement
+                impactful solutions with measurable results.
+              </p>
+            </li>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+<style>
+  li {
+    list-style: none;
+  }
+  li:has(p) p {
+    &::before {
+      content: url("../icons/checkmark.svg");
+    }
+  }
+  @layer components {
+    .one {
+      grid-column: 2;
+      container-type: inline-size;
+      container-name: one;
+    }
+    .wrapper-1 {
+      container-type: inline-size;
+      container-name: card;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 1rem;
+    }
+    .content {
+      margin: 0 2rem 2rem 2rem;
+      gap: 1rem;
+    }
+
+    .card:has(img) {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+
+      & img {
+        border-radius: 20px;
+      }
+
+      @container one (width > 768px) {
+        grid-template-columns: 2fr 3fr;
+      }
+      @container card (width < 700px) {
+        & img {
+          display: none;
+        }
+        & .content {
+          margin: 2rem;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+</style>

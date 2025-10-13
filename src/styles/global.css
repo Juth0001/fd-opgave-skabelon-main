@@ -1,0 +1,71 @@
+/* Globale styles her */
+/*farver*/
+:root {
+    --primary-yellow: #FFCC4A;
+    --primary-green: #4EAF4E;
+    --primary-black: #181818;
+    --grey-white: #F5F5F5;
+    --secondary-white: #FFFFFF;
+    --secondary-black: #353535;
+    --yellow-hoover: #FFE5A2;
+    /*tekst størrelse*/
+
+    --fontSize-a: 18px;
+
+}
+
+main {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Cabin;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 116%;
+    /* 58px */
+}
+
+h2 {
+    font-size: 45px;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+h4 {
+    font-size: 35px;
+}
+
+h5 {
+    font-size: 30px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+p {
+
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 147.5%;
+    /* 23.6px */
+}
+
+a {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 25px 25px 25px 25px;
+    text-decoration: none;
+
+    width: fit-content;
+}
