@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/Hero.astro";
+import "@styles/main.css";
+import "@styles/global.css";
+import ScrollCard from "./ScrollCard.astro";
+---
+
+<section class="scrolling_container">
+    <div class="wrapper">
+        <div class="content">
+            <div class="text">
+                <h2>Financial Projections</h2>
+                <p>
+                    Financial projections are essential for planning and
+                    monitoring a company’s performance. They provide insights
+                    into potential revenue, expenses, and profitability over
+                    specific periods.
+                </p>
+            </div>
+            <div class="buttons">
+                <button>left</button>
+                <button>right</button>
+            </div>
+            <div class="scroll">
+                <ScrollCard />
+            </div>
+        </div>
+    </div>
+</section>
