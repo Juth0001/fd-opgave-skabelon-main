@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Hero from "@components/Hero.astro";
+
 import "@styles/main.css";
 import "@styles/global.css";
 import ScrollCard from "./ScrollCard.astro";
@@ -50,6 +50,8 @@ import ScrollCard from "./ScrollCard.astro";
             flex-direction: column;
             gap: 3rem;
             position: relative;
+            container-type: inline-size;
+            container-name: wrapper;
         }
         .content {
             padding-top: 4rem;
@@ -75,6 +77,11 @@ import ScrollCard from "./ScrollCard.astro";
             gap: 1rem;
             justify-content: flex-end;
             grid-row: 2;
+        }
+        @container wrapper (width<700px) {
+            .buttons {
+                display: none;
+            }
         }
 
         .buttons button {
