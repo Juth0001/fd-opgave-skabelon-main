@@ -1,0 +1,25 @@
+---
+//@ts-nocheck
+import data from "@data/coreValues.json";
+---
+
+<ul>
+    {
+        data.values.map((item) => (
+            <li key={item.title}>
+                <img
+                    src={`/icons/${item.icon}.svg`}
+                    alt={`${item.title} icon`}
+                />
+                <h6>{item.title}</h6>
+                <p>{item.description}</p>
+                <a href={item.link.url}>{item.link.text}</a>
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    @layer components {
+    }
+</style>

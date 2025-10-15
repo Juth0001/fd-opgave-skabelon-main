@@ -1,0 +1,104 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import "@styles/main.css";
+import "@styles/global.css";
+import GlobalCard from "./GlobalCard.astro";
+---
+
+<section class="main">
+    <section class="wrapper">
+        <div class="content">
+            <div class="text">
+                <p>Growing with our Clients</p>
+                <h2>Our core values & principles</h2>
+                <p>
+                    Capitalize on low hanging fruit to identify a ballpark value
+                    added activity beta test. Override the digital divide with
+                    additional from DevOps.
+                </p>
+            </div>
+
+            <div class="buttons">
+                <a href="#0">Get in touch</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="Cards">
+        <GlobalCard />
+    </div>
+</section>
+<style>
+    @layer components {
+        .main {
+            height: 90vh;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background-color: var(--primary-black);
+            color: var(--secondary-white);
+            padding: 4rem 0 0rem 0;
+            display: grid;
+            grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+            overflow: hidden;
+        }
+        .wrapper {
+            grid-column: 1/-1;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            position: relative;
+            container-type: inline-size;
+            container-name: wrapper;
+        }
+        .content {
+            padding-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+
+            align-items: center;
+            gap: 2rem;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            grid-column: 2/4;
+            grid-row: 1;
+            gap: 2rem;
+        }
+
+        .buttons {
+            grid-column: 4/5;
+            display: flex;
+
+            justify-content: flex-end;
+            grid-row: 1;
+        }
+        /* .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }*/
+        .buttons {
+            grid-column: 4/5;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            grid-row: 2;
+        }
+
+        a {
+            display: inline-block;
+            background-color: var(--secondary-white);
+            color: var(--secondary-black);
+            transition: background-color 0.2s ease;
+            align-self: flex-start;
+        }
+        a:hover {
+            background-color: var(--primary-yellow);
+            color: var(--primary-black);
+            border-color: solid 1px var(--primary-black);
+        }
+    }
+</style>
