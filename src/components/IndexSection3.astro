@@ -33,30 +33,62 @@ import "@styles/global.css";
 
 <style>
     @layer components {
-        .main {
-            height: 50vh;
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            background-color: var(--primary-yellow);
-            padding: 5rem 0 5rem 0;
-            display: grid;
+        @media (max-width: 700px) {
+            .main {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                background-color: var(--primary-yellow);
+                padding: 5rem 0 5rem 0;
+            }
+            .content {
+                display: flex;
 
-            overflow: hidden;
+                justify-content: center;
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: left;
+                gap: 2rem;
+            }
+            .wrapper {
+                margin: 0 4rem 0 4rem;
+            }
+            .stats {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                width: min(400px, 100% - 1rem);
+                align-items: center;
+                margin-top: 2rem;
+            }
         }
-        .inner {
-            grid-column: 2;
-            place-items: center;
-        }
+        @media (min-width: 700px) {
+            .main {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                background-color: var(--primary-yellow);
+                padding: 5rem 0 5rem 0;
+                display: grid;
 
-        .wrapper {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 2rem;
-        }
-        .content {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+                overflow: hidden;
+            }
+            .inner {
+                grid-column: 2;
+                place-items: center;
+            }
+
+            .wrapper {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 2rem;
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
         }
         .stats {
             display: flex;
