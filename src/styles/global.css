@@ -5,6 +5,7 @@
     --primary-green: #4EAF4E;
     --primary-black: #181818;
     --grey-white: #F5F5F5;
+    --secondary-grey: #EBEBEB;
     --secondary-white: #FFFFFF;
     --secondary-black: #353535;
     --yellow-hoover: #FFE5A2;
@@ -13,6 +14,8 @@
     --fontSize-a: 18px;
 
 }
+
+
 
 main {
     overflow: visible;

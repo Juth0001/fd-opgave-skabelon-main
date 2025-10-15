@@ -6,25 +6,115 @@ import "@styles/global.css";
 import ScrollCard from "./ScrollCard.astro";
 ---
 
-<section class="scrolling_container">
-    <div class="wrapper">
+<section class="main">
+    <section class="wrapper">
         <div class="content">
-            <div class="text">
-                <h2>Financial Projections</h2>
-                <p>
-                    Financial projections are essential for planning and
-                    monitoring a company’s performance. They provide insights
-                    into potential revenue, expenses, and profitability over
-                    specific periods.
-                </p>
-            </div>
+            <h2>Financial Projections</h2>
+            <p>
+                Financial projections are essential for planning and monitoring
+                a company’s performance. They provide insights into potential
+                revenue, expenses, and profitability over specific periods.
+            </p>
+
             <div class="buttons">
-                <button>left</button>
-                <button>right</button>
-            </div>
-            <div class="scroll">
-                <ScrollCard />
+                <button class="arrow left" aria-label="Scroll left">
+                    <img src="/icons/arrow-left.svg" alt="Scroll left" />
+                </button>
+                <button class="arrow right" aria-label="Scroll right">
+                    <img src="/icons/arrow--right.svg" alt="Scroll right" />
+                </button>
             </div>
         </div>
-    </div>
+
+        <div class="scroll">
+            <ScrollCard />
+        </div>
+    </section>
 </section>
+
+<style>
+    @layer components {
+        .main {
+            height: 90vh;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background-color: var(--grey-white);
+            padding: 4rem 0 0rem 0;
+            display: grid;
+            grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+            overflow: hidden;
+        }
+        .wrapper {
+            grid-column: 1/-1;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            position: relative;
+        }
+        .content {
+            padding-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+            grid-template-rows: 2;
+            align-items: center;
+            gap: 2rem;
+        }
+        .content h2 {
+            grid-column: 2/4;
+            grid-row: 1;
+        }
+
+        .content p {
+            grid-column: 2/5;
+            max-width: 600px;
+            grid-row: 2;
+        }
+        .buttons {
+            grid-column: 4/5;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            grid-row: 2;
+        }
+
+        .buttons button {
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: var(--primary-black);
+            fill: var(--secondary-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .buttons button:hover {
+            background: var(--primary-yellow, #ffcc4a);
+        }
+        .buttons img {
+            width: 20px;
+            height: 20px;
+            filter: invert(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .buttons button:hover img {
+            filter: invert(0%);
+        }
+        .scroll {
+            grid-column: 1 / -1;
+            overflow-x: auto;
+            overflow-y: visible;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        .scroll::-webkit-scrollbar {
+            display: none;
+        }
+    }
+</style>

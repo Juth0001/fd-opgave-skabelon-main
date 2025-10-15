@@ -1,5 +1,94 @@
 ---
 //@ts-nocheck
-import finansialData from "@data/finansialProjection.json";
-console.log(finansialData);
+import data from "@data/financialProjections.json";
+
+// Importér alle ikoner manuelt
+import calIcon from "public/icons/cal.svg";
+import cardIcon from "public/icons/card.svg";
+import lawIcon from "public/icons/law.svg";
+import moneyIcon from "public/icons/money.svg";
+
+// Map til at matche dataens "icon"-felt
+const iconMap = {
+    cal: calIcon,
+    card: cardIcon,
+    law: lawIcon,
+    money: moneyIcon,
+};
 ---
+
+<ul class="financial-list">
+    {
+        data.values.map((item) => (
+            <li class="financial-item" key={item.title}>
+                <img
+                    src={`/icons/${item.icon}.svg`}
+                    alt={`${item.title} icon`}
+                />
+                <h6>{item.title}</h6>
+                <p>{item.description}</p>
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    @layer components {
+        ul.financial-list {
+            list-style: none;
+
+            padding: 0 2rem 2rem 2rem;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: max(1rem, 50% - var(--content-width) / 4);
+        }
+
+        li.financial-item {
+            background: var(--bg-card, var(--secondary-white));
+            color: var(--text-card, var(--primary-black));
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: left;
+            flex: 1 0 400px;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        li.financial-item:hover {
+            transform: translateY(10px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+            background-color: var(--primary-black);
+            color: var(--secondary-white);
+        }
+
+        li.financial-item img {
+            width: 34px;
+            height: 26px;
+            transition:
+                transform 0.3s ease,
+                filter 0.3s ease;
+        }
+
+        li.financial-item:hover img {
+            transform: scale(1.05);
+            /* CSS filter til at få ikonet til at se gult ud */
+            filter: invert(72%) sepia(89%) saturate(622%) hue-rotate(1deg)
+                brightness(1.05) contrast(1);
+        }
+
+        li.financial-item h6 {
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        li.financial-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+    }
+</style>
