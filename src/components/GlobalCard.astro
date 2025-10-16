@@ -7,13 +7,21 @@ import data from "@data/coreValues.json";
     {
         data.values.map((item) => (
             <li key={item.title}>
-                <img
-                    src={`/icons/${item.icon}.svg`}
-                    alt={`${item.title} icon`}
-                />
+                <div class="icon-wrap">
+                    <img
+                        src={`/icons/${item.icon}.svg`}
+                        alt={`${item.title} icon`}
+                        class="icon"
+                    />
+                </div>
                 <h6>{item.title}</h6>
                 <p>{item.description}</p>
-                <a href={item.link.url}>{item.link.text}</a>
+                <button class="buttons">
+                    <a href={item.link.url}>
+                        {item.link.text}
+                        <img src="/icons/arrow--right.svg" alt="Scroll right" />
+                    </a>
+                </button>
             </li>
         ))
     }
@@ -21,5 +29,95 @@ import data from "@data/coreValues.json";
 
 <style>
     @layer components {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            justify-items: center;
+        }
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: rgba(38, 38, 38, 0.9);
+            backdrop-filter: blur(16px);
+            background-color: var(--secondary-grey);
+
+            color: var(--primary-black);
+            text-align: left;
+            max-width: 370px;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+        li:hover {
+            transform: translateY(10px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+            background-color: var(--secondary-white);
+            color: var(--primary-black);
+        }
+
+        .icon-wrap {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: var(--primary-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition:
+                transform 0.3s ease,
+                filter 0.3s ease;
+        }
+        .icon {
+            width: 28px;
+            height: 28px;
+            filter: brightness(0) invert(1); /* gør SVG hvid */
+            transition: filter 0.3s ease;
+        }
+        li:hover img {
+            transform: scale(1.05);
+            /* CSS filter til at få ikonet til at se gult ud */
+            filter: invert(72%) sepia(89%) saturate(622%) hue-rotate(1deg)
+                brightness(1.05) contrast(1);
+        }
+        li h6 {
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        li p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .button {
+            grid-column: 4/5;
+            display: flex;
+
+            grid-row: 1;
+        }
+
+        a {
+            display: flex;
+            width: fit-content;
+
+            color: var(--secondary-black);
+            transition: background-color 0.2s ease;
+
+            gap: 1rem;
+        }
+        a img {
+            width: 15px;
+        }
+        a:hover {
+            background-color: var(--yellow-hoover);
+            color: var(--primary-black);
+            border-color: solid 1px var(--primary-black);
+        }
     }
 </style>

@@ -32,7 +32,7 @@ import GlobalCard from "./GlobalCard.astro";
 <style>
     @layer components {
         .main {
-            height: 90vh;
+            height: fit-content;
             width: 100vw;
             margin-left: calc(-50vw + 50%);
             background-color: var(--primary-black);
@@ -44,8 +44,8 @@ import GlobalCard from "./GlobalCard.astro";
         }
         .wrapper {
             grid-column: 1/-1;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+
             gap: 3rem;
             position: relative;
             container-type: inline-size;
@@ -55,10 +55,10 @@ import GlobalCard from "./GlobalCard.astro";
             padding-top: 4rem;
             display: grid;
             grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
-
-            align-items: center;
-            gap: 2rem;
+            container-type: inline-size;
+            container-name: content;
         }
+
         .text {
             display: flex;
             flex-direction: column;
@@ -75,11 +75,7 @@ import GlobalCard from "./GlobalCard.astro";
             justify-content: flex-end;
             grid-row: 1;
         }
-        /* .text {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }*/
+
         .buttons {
             grid-column: 4/5;
             display: flex;
@@ -99,6 +95,11 @@ import GlobalCard from "./GlobalCard.astro";
             background-color: var(--primary-yellow);
             color: var(--primary-black);
             border-color: solid 1px var(--primary-black);
+        }
+        .Cards {
+            grid-column: 2;
+
+            top: -90px;
         }
     }
 </style>
