@@ -1,0 +1,74 @@
+---
+//@ts-nocheck
+import data from "@data/contact.json";
+
+// Importér alle ikoner manuelt
+import clockIcon from "public/icons/clock.svg";
+import phoneIcon from "public/icons/phone.svg";
+import pinIcon from "public/icons/pin.svg";
+---
+
+<ul class="contact_list">
+    {
+        data.values.map((item) => (
+            <li class="contact-item" key={item.title}>
+                <img
+                    src={`/icons/${item.icon}.svg`}
+                    alt={`${item.title} icon`}
+                    class={`${item.icon}`}
+                />
+                <div class="info">
+                    <p>{item.description}</p>
+                    <h6>{item.detail}</h6>
+                </div>
+            </li>
+        ))
+    }
+</ul>
+<style>
+    @layer components {
+        ul.contact_list {
+            list-style: none;
+
+            padding: 2rem 2rem 2rem 0rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-padding-inline: max(1rem, 50% - var(--content-width) / 4);
+        }
+        .contact-item {
+            display: flex;
+            width: fit-content;
+            gap: 1rem;
+        }
+        li {
+            list-style: none;
+        }
+        .info {
+            width: 100%;
+        }
+
+        .phone {
+            background-color: #fff1cf;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .clock {
+            background-color: #a4eda4;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .pin {
+            background-color: #eaeaea;
+            border-radius: 50%;
+            padding: 12px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+</style>

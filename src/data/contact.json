@@ -1,0 +1,23 @@
+{
+    "title": "contact",
+    "values": [
+        {
+            "title": "phone",
+            "icon": "phone",
+            "description": "Call Today",
+            "detail": "+1 800 100 900"
+        },
+        {
+            "title": "clock",
+            "icon": "clock",
+            "description": "Monday To Friday",
+            "detail": "9AM - 5PM"
+        },
+        {
+            "title": "pin",
+            "icon": "pin",
+            "description": "USA Office",
+            "detail": "195 Devonshire St Boston, MA 02110"
+        }
+    ]
+}
