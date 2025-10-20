@@ -51,7 +51,7 @@ import ContactCard from "./ContactCard.astro";
         .main {
             container-type: inline-size;
             container-name: main;
-            margin: 5rem 0 0 0;
+            margin: 5rem 0 5rem 0;
         }
         .wrapper {
             container-type: inline-size;
@@ -120,13 +120,14 @@ import ContactCard from "./ContactCard.astro";
             grid-column: 2/3;
             grid-row: 2;
         }
+
         .figure_card::after {
             content: "";
             position: absolute;
-            bottom: -1.4rem;
+            bottom: -1.5rem;
             left: -2.75rem;
             width: 270px;
-            height: 140px;
+            height: 150px;
             background: var(--primary-green);
             border-radius: 20px;
             z-index: 1;
@@ -134,18 +135,18 @@ import ContactCard from "./ContactCard.astro";
         .figure_card::before {
             content: "";
             position: absolute;
-            top: -2rem;
-            right: -2.8rem;
-            width: 250px;
-            height: 270px;
+            top: -2.75rem;
+            right: -4.5rem;
+            width: 290px;
+            height: 320px;
             background-image: url("../icons/pattern.svg");
             background-repeat: repeat;
             z-index: 0;
             opacity: 0.6;
         }
         .figure_card img {
-            max-width: 100%;
-            height: auto;
+            max-width: auto;
+            height: 100%;
             border-radius: 20px;
             display: block;
             position: relative;
