@@ -1,0 +1,49 @@
+---
+//@ts-nocheck
+import data from "@data/employees.json";
+---
+
+
+
+<ul>
+    <li>
+        img
+    </li>
+</ul>
+<style>
+    @layer components {
+        ul {
+            /*display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            justify-items: center;*/
+        }
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 2.5rem;
+            border-radius: 20px;
+            background: rgba(38, 38, 38, 0.9);
+            backdrop-filter: blur(16px);
+            background-color: var(--secondary-grey);
+
+            color: var(--primary-black);
+            text-align: left;
+            max-width: 370px;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+        li:hover {
+            transform: translateY(10px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+            background-color: var(--secondary-white);
+            color: var(--primary-black);
+        }
+
+    }
+</style>
