@@ -42,8 +42,10 @@ const { name, description, title, url, platform, img, slug } = Astro.props;
             position: relative;
         }
 
-        figure img {
+        .portrait img {
             border-radius: 20px;
+            max-width: 300px;
+            height: auto;
         }
         .title {
             position: absolute;
