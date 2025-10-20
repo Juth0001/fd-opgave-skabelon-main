@@ -3,11 +3,13 @@ import Layout from "@layouts/Layout.astro";
 import "@styles/main.css";
 import "@styles/global.css";
 import Hero from "@components/Hero.astro";
+import GlobalCard from "@components/GlobalCard.astro";
 ---
 
 <Layout>
     <Hero />
     <main>
+         <!-- Section 1: our vision -->
         <section class="our_vision">
             <div class="wrapper">
                 <div class="card">
@@ -39,8 +41,70 @@ import Hero from "@components/Hero.astro";
                         />
                     </figure>
                 </div>
+                <section class="stats">
+                    <div class="stats_wrapper">
+                        <div class="stats_card">
+                            <h1>1128+</h1>
+                            <p>Successful Work</p>
+                        </div>
+                        <div>
+                            <h1>908+</h1>
+                            <p>Team member</p>
+                        </div>
+                        <div>
+                            <h1>258+</h1>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div>
+                            <h1>564+</h1>
+                            <p>Creative Idea</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </section>
+
+            <!-- Section 2: Core Values -->
+            <section class="CoreValues">
+                <div class="wrapper">
+                  <div class="content">
+                    <div class="text">
+                      <p>Growing with our Clients</p>
+                      <h2>Our core values & principles</h2>
+                      <p>
+                        Capitalize on low hanging fruit to identify a ballpark value added
+                        activity beta test. Override the digital divide with additional
+                        from DevOps.
+                      </p>
+                    </div>
+                    <div class="buttons">
+                      <a href="#0">Get in touch</a>
+                    </div>
+                  </div>
+                  <div class="Cards">
+                    <GlobalCard />
+                  </div>
+                </div>
+              </section>
+               <!-- Section 3: our team -->
+            <section class="CoreValues">
+                <div class="wrapper">
+                  <div class="content">
+                    <div class="text">
+                      <p>Our team</p>
+                      <h2>We champion the bold to achieve the extraordinary
+                    </h2>
+                      <p>
+                        Our success stems from the synergy between dedicated teams and our valued clients. We prioritize a company culture that fosters exceptional productivity, ensures customer satisfaction, and promotes mutual respect among all team members.
+                      </p>
+                    </div>
+                    
+                  </div>
+                  <div class="Cards">
+                    <GlobalCard />
+                  </div>
+                </div>
+              </section>
     </main>
 </Layout>
 <style>
@@ -96,8 +160,16 @@ import Hero from "@components/Hero.astro";
                 z-index: 0;
                 opacity: 0.6;
             }
-        }
-        .our_vision .figure_img {
+            .stats .stats_wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 1rem 0 2rem 0;}}
+
+        
+            .our_vision .figure_img {
             position: relative;
             width: 90%;
             max-width: 100%;
@@ -157,5 +229,135 @@ import Hero from "@components/Hero.astro";
         .our_vision li:has(p) p::before {
             content: url("../icons/checkmark.svg");
         }
+        .stats {
+            container-type: inline-size;
+            container-name: stats;
+        }
+        .stats_wrapper {
+            width: 100%;
+            display: flex;
+
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 4rem 0 2rem 0;
+        }
+        .stats_card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: auto;
+        }
+
+         /*  SECTION 2: CORE VALUES      */
+    .CoreValues {
+    
+      background-color: var( --grey-white);
+      color: var(--primary-black);
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-bottom: 4rem ;
+      padding: 4rem 0 2rem 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+    }
+    .CoreValues .wrapper {
+      grid-column: 2/-2;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      position: relative;
+      margin: 0 0 4rem 0;
+    }
+    .CoreValues .content {
+      padding: 4rem 2rem 0 2rem;
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr;
+      grid-row: auto;
+      position: relative;
+      align-items: center;
+      gap: 2rem;
+    }
+    .CoreValues .text {
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+    .CoreValues .text p {
+      max-width: 600px;
+    }
+    .CoreValues .buttons {
+      grid-column: 3/4;
+      grid-row: 2/3;
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      align-items: baseline;
+    }
+    .CoreValues .buttons a {
+      display: inline-block;
+      background-color: var(--primary-black);
+      color: var(--secondary-white);
+      padding: 0.5rem 1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .CoreValues .buttons a:hover {
+      background-color: var(--primary-yellow);
+      color: var(--primary-black);
+    }
+    .CoreValues .Cards {
+      grid-column: 2;
+      
+      padding: 0 2rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+      /*  SECTION 3: our team      */
+      .CoreValues {
+    
+    background-color: var( --grey-white);
+    color: var(--primary-black);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-bottom: 4rem ;
+    padding: 4rem 0 2rem 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+  }
+  .CoreValues .wrapper {
+    grid-column: 2/-2;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    margin: 0 0 4rem 0;
+  }
+  .CoreValues .content {
+    padding: 4rem 2rem 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-row: auto;
+    position: relative;
+    align-items: center;
+    gap: 2rem;
+  }
+  .CoreValues .text {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+  .CoreValues .text p {
+    max-width: 600px;
+  }
+  
+  .CoreValues .Cards {
+    grid-column: 2;
+    
+    padding: 0 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+       
     }
 </style>
