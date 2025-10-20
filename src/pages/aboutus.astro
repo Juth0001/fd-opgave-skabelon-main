@@ -101,7 +101,26 @@ import EmployeCard from "@components/EmployeCard.astro";
           <EmployeCard
             img="src/data/images/sarah.webp"
             slug="sarah-jasmine"
+            title="CEO at Company"
             name="Sarah Jasmine"
+            description="Driving innovation and leadership with a focus on strategic growth and impactful decisions."
+            url="#"
+            platform="some"
+          />
+          <EmployeCard
+            img="src/data/images/john.webp"
+            slug="John Carter"
+            title="Manager"
+            name="John Carter"
+            description="Expert in operational efficiency, ensuring smooth processes and exceptional team performance."
+            url="#"
+            platform="some"
+          />
+          <EmployeCard
+            img="src/data/images/daisy.webp"
+            slug="Daisy Stella"
+            title="Visionary"
+            name="Daisy Stella"
             description="Driving innovation and leadership with a focus on strategic growth and impactful decisions."
             url="#"
             platform="some"
@@ -354,12 +373,14 @@ import EmployeCard from "@components/EmployeCard.astro";
       max-width: 600px;
     }
 
-    .CoreValues .Cards {
+    .CoreValues .content {
       grid-column: 2;
 
       padding: 0 2rem 0 2rem;
-      display: flex;
-      flex-direction: column;
+    }
+    .CoreValues .wrapper .Cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
   }
 </style>
