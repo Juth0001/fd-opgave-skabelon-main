@@ -28,11 +28,14 @@ h4,
 h5,
 h6 {
     font-family: Cabin;
-    font-size: 50px;
     font-style: normal;
     font-weight: 700;
     line-height: 116%;
     /* 58px */
+}
+
+h1 {
+    font-size: 50px;
 }
 
 h2 {

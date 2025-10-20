@@ -1,119 +1,69 @@
 ---
 import { Image } from "astro:assets";
-import Services from "./Services.astro";
-import CEOImage from "@assets/images/ceo.png";
-import Layout from "@layouts/Layout.astro";
+
+import heroAboutus from "@assets/images/heroAboutus.webp";
 ---
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Empowering Your Business Growth</h1>
-    <p>
-      Discover tailored strategies and expert insights to take your business to
-      the next level. Let us help you navigate challenges and achieve
-      sustainable success.
-    </p>
-    <a href="#0">Book a Meeting</a>
-  </div>
-
-  <Image src={CEOImage} alt="CEO" />
+    <Image src={heroAboutus} alt="CEO" />
 </section>
-<div class="Services">
-  <Services />
+<div class="hero-content">
+    <div class="text">
+        <div class="about">
+            <p>ABOUT</p>
+        </div>
+        <h2>Creative Services For Boost <br /> Your Business Growth</h2>
+    </div>
 </div>
 
 <style>
-  /* Styles her */
-
-  @layer components {
-    .hero {
-      background-color: #181818;
-      color: #ffffff;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column: 1/-1;
-      align-items: center;
-      height: fit-content;
-      margin-top: 0;
-      width<(700px):;
-    }
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      justify-content: center;
-
-      max-width: 70%;
-      justify-self: end;
-    }
-    p {
-      max-width: 90%;
-      margin: 0rem;
-    }
-    a {
-      display: inline-block;
-      background-color: var(--secondary-white);
-      color: var(--secondary-black);
-      transition: background-color 0.2s ease;
-      align-self: flex-start;
-    }
-    a:hover {
-      background-color: var(--primary-yellow);
-      color: var(--primary-black);
-      border-color: solid 1px var(--primary-black);
-    }
-
-    .Services {
-      grid-column: 2;
-      max-width: 1200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* centrer indholdet vandret */
-      color: var(--secondary-white);
-    }
-
-    @media (max-width: 700px) {
-      .hero img {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        grid-template-rows: 2;
-        text-align: center;
-      }
-
-      .hero-content {
-        justify-self: center;
-        align-items: left;
-        max-width: 100%;
-        margin: 30px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column: 1/-1;
-        height: fit-content;
-
-        h1 {
-          grid-column: 1/2;
+    @layer components {
+        .hero {
+            grid-column: 1/-1;
+            align-items: center;
+            height: fit-content;
+            position: relative;
+            container-type: inline-size;
         }
-        p,
-        a {
-          grid-column: 2/3;
-          width: fit-content;
-          margin: 1rem;
+        .about p {
+            width: fit-content;
+            border-radius: 20px;
+            background: var(--primary-yellow);
+            font-size: 14px;
+            padding: 0 14px;
         }
-      }
-      p {
-        align-self: center;
-        justify-content: center;
-      }
+        .text {
+            margin: 2rem 4rem 2rem 2rem;
+        }
+        .about {
+            grid-column: 2;
 
-      .Services {
-        max-width: 400px;
-        grid-column: 2;
-        align-self: center;
-        justify-self: center; /* centrer indholdet vandret */
-      }
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* centrer indholdet vandret */
+            color: var(--primary-black);
+        }
+        .hero-content {
+            position: absolute;
+            width: fit-content;
+            top: 13rem;
+            left: 16rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 20px;
+            backdrop-filter: blur(0px);
+        }
+        @media (max-width: 700px) {
+            .hero-content {
+                position: static;
+                width: 100%;
+                margin: 1rem;
+                top: auto;
+                left: auto;
+            }
+
+            .hero img {
+                width: 100%;
+            }
+        }
     }
-  }
 </style>
