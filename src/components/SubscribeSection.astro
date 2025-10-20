@@ -1,0 +1,150 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import "@styles/main.css";
+import "@styles/global.css";
+---
+
+<section class="main">
+    <div class="wrapper">
+        <div class="content">
+            <div class="text">
+                <h5>Subscribe Our Newsletter</h5>
+                <p>
+                    Build stronger Customer Relationships with <strong
+                        >Consultalk</strong
+                    >
+                </p>
+            </div>
+            <div class="subscribe">
+                <input
+                    type="text"
+                    name=""
+                    id="mail_input"
+                    placeholder="your mail address"
+                />
+
+                <div class="buttons">
+                    <a href="#0"><strong>Subscribe</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @layer components {
+        .main {
+            container-type: inline-size;
+            container-name: main;
+            margin: 12rem 0 5rem 0;
+        }
+        .wrapper {
+            container-type: inline-size;
+            container-name: wrapper;
+            background-color: var(--primary-black);
+            border-radius: 20px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            display: flex; /* 👈 Sørg for at indhold kan centreres */
+            align-items: center;
+        }
+        .content {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+        }
+        p,
+        h5 {
+            color: var(--secondary-white);
+        }
+        p {
+            font-size: 13.5px;
+        }
+        @container main (width>768px) {
+            .content {
+                grid-template-columns: 2fr 2fr;
+                width: 100%;
+                margin: 3rem;
+            }
+
+            .text {
+                grid-column: 1/2;
+            }
+            .subscribe {
+                grid-column: 2/3;
+            }
+        }
+
+        @container wrapper (width<700px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            z-index: 1;
+            width: 100%;
+        }
+
+        a {
+            display: inline-block;
+            background-color: var(--primary-yellow);
+            color: var(--secondary-black);
+            transition: background-color 0.2s ease;
+            align-self: flex-start;
+        }
+        a:hover {
+            background-color: var(--yellow-hoover);
+            color: var(--primary-black);
+            border-color: solid 1px var(--primary-black);
+        }
+        input[type="text"] {
+            padding: 0.6rem 1rem;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            flex: 1;
+            outline: none;
+            background: #fff;
+            transition: border 0.2s ease;
+        }
+        .subscribe {
+            display: flex;
+            width: 100%;
+            gap: 1rem;
+            align-items: center;
+        }
+        .wrapper::after {
+            content: "";
+            position: absolute;
+            bottom: -9.5rem;
+            right: -2rem;
+            width: 350px;
+            height: 150px;
+            background: var(--primary-green);
+            border-radius: 20px;
+            z-index: 0;
+            transform: rotate(-40deg);
+        }
+        .wrapper::before {
+            content: "";
+            position: absolute;
+            bottom: 2rem;
+            right: -5rem;
+            width: 290px;
+            height: 320px;
+            background-image: url("../icons/pattern.svg");
+            background-repeat: repeat;
+            z-index: 0;
+            opacity: 0.6;
+            transform: rotate(-40deg);
+        }
+    }
+</style>
