@@ -1,15 +1,22 @@
 ---
 //@ts-nocheck
 import data from "@data/employees.json";
+const { name, description, url, icon, platform, img, slug } = Astro.props;
 ---
 
+<div class="employeeCard">
+    <div class="portrait">
+        <img src={img} alt={slug} />
 
+        <h5>{name}</h5>
+        <p>{description}</p>
 
-<ul>
-    <li>
-        img
-    </li>
-</ul>
+        <a href={url}><img src="/icons/instagram.svg" alt={platform} /></a>
+        <a href={url}><img src="/icons/facebook.svg" alt={platform} /></a>
+        <a href={url}><img src="/icons/twitter.svg" alt={platform} /></a>
+    </div>
+</div>
+
 <style>
     @layer components {
         ul {
@@ -44,6 +51,5 @@ import data from "@data/employees.json";
             background-color: var(--secondary-white);
             color: var(--primary-black);
         }
-
     }
 </style>
