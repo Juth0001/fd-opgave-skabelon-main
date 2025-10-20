@@ -37,7 +37,6 @@ import "@styles/global.css";
         .main {
             container-type: inline-size;
             container-name: main;
-            margin: 12rem 0 5rem 0;
         }
         .wrapper {
             container-type: inline-size;
@@ -66,6 +65,9 @@ import "@styles/global.css";
             font-size: 13.5px;
         }
         @container main (width>768px) {
+            .wrapper {
+                margin: 5rem 0 5rem 0;
+            }
             .content {
                 grid-template-columns: 2fr 2fr;
                 width: 100%;
@@ -83,9 +85,18 @@ import "@styles/global.css";
         @container wrapper (width<700px) {
             .content {
                 grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .subscribe {
+                padding-left: 1rem;
             }
         }
-
+        .text {
+            z-index: 1;
+        }
         .buttons {
             display: flex;
             gap: 1rem;

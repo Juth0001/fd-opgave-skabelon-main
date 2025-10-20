@@ -1,24 +1,625 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/Hero.astro";
-import IndexSection1 from "@components/IndexSection1.astro";
-import IndexSection2 from "@components/IndexSection2.astro";
-import IndexSection3 from "@components/IndexSection3.astro";
-import IndexSection4 from "@components/IndexSection4.astro";
-import IndexSection5 from "@components/IndexSection5.astro";
-
-import SubscribeSection from "@components/SubscribeSection.astro";
+import ScrollCard from "@components/ScrollCard.astro";
+import GlobalCard from "@components/GlobalCard.astro";
+import ContactCard from "@components/ContactCard.astro";
+import "@styles/main.css";
+import "@styles/global.css";
 ---
 
 <Layout>
   <Hero />
   <main>
-    <IndexSection1 />
-    <IndexSection2 />
-    <IndexSection3 />
-    <IndexSection4 />
-    <IndexSection5 />
-    <SubscribeSection />
+    <!-- Section 1: What to Expect -->
+    <section class="What_to_expect">
+      <div class="wrapper">
+        <div class="card">
+          <figure class="figure_img">
+            <img src="src/data/images/teamwork.png" alt="teamwork" />
+          </figure>
+          <div class="content">
+            <p>WE'LL WORK WITH YOU</p>
+            <h2>What To Expect</h2>
+            <p>
+              Our collaboration is built on transparency, efficiency, and
+              measurable results. Together, we create strategies tailored to
+              your unique needs and goals.
+            </p>
+            <li>
+              <p>
+                Collaborate to build actionable strategies that drive
+                sustainable growth and deliver tangible outcomes.
+              </p>
+              <p>
+                Identify opportunities to optimize processes and implement
+                impactful solutions with measurable results.
+              </p>
+            </li>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Financial Projections -->
+    <section class="FinancialProjections">
+      <div class="wrapper">
+        <div class="content">
+          <h2>Financial Projections</h2>
+          <p>
+            Financial projections are essential for planning and monitoring a
+            company’s performance. They provide insights into potential revenue,
+            expenses, and profitability over specific periods.
+          </p>
+          <div class="buttons">
+            <button class="arrow left" aria-label="Scroll left">
+              <img src="/icons/arrow-left.svg" alt="Scroll left" />
+            </button>
+            <button class="arrow right" aria-label="Scroll right">
+              <img src="/icons/arrow--right.svg" alt="Scroll right" />
+            </button>
+          </div>
+        </div>
+        <div class="scroll">
+          <ScrollCard />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Experience -->
+    <section class="Experience">
+      <div class="inner">
+        <div class="wrapper">
+          <div class="content">
+            <p>Experience</p>
+            <h2>More than 25 years <br /> of experience</h2>
+            <p>3000+ of our clients are insured around the World</p>
+          </div>
+          <div class="stats">
+            <div class="stats_card">
+              <div class="stat" style="--percent:85"></div><h5>Consistency</h5>
+            </div>
+            <div class="stats_card">
+              <div class="stat" style="--percent:95"></div><h5>Improvement</h5>
+            </div>
+            <div class="stats_card">
+              <div class="stat" style="--percent:90"></div><h5>Branching</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Core Values -->
+    <section class="CoreValues">
+      <div class="wrapper">
+        <div class="content">
+          <div class="text">
+            <p>Growing with our Clients</p>
+            <h2>Our core values & principles</h2>
+            <p>
+              Capitalize on low hanging fruit to identify a ballpark value added
+              activity beta test. Override the digital divide with additional
+              from DevOps.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="#0">Get in touch</a>
+          </div>
+        </div>
+        <div class="Cards">
+          <GlobalCard />
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Contact -->
+    <section class="Contact">
+      <div class="wrapper">
+        <div class="content">
+          <div class="text">
+            <p>PROCESS</p>
+            <h4>Contact Us. It’s Easy.</h4>
+            <p>
+              Leverage agile frameworks to provide a robust synopsis for high
+              level overviews. Iterative approaches to corporate strategy foster
+              collaborative.
+            </p>
+            <li>
+              <ContactCard />
+            </li>
+          </div>
+          <figure class="figure_card">
+            <img
+              src="src/data/images/contact1.webp"
+              alt="contact1"
+              class="img_1"
+            />
+            <img
+              src="src/data/images/contact2.webp"
+              alt="contact2"
+              class="img_2"
+            />
+            <img
+              src="src/data/images/contact3.webp"
+              alt="contact3"
+              class="img_3"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
-<style></style>
+<style>
+  @layer component {
+    body > * {
+      grid-column: 2;
+    }
+    /*  SECTION 1: WHAT TO EXPECT      */
+    .What_to_expect {
+      margin-bottom: 5rem;
+      container-type: inline-size;
+    }
+
+    .What_to_expect .card {
+      display: grid;
+      gap: 1rem;
+      position: relative;
+      align-items: start;
+    }
+    @container (width > 768px) {
+      .What_to_expect .card {
+        grid-template-columns: 2fr 2fr;
+      }
+    }
+
+    @container (width < 700px) {
+      .What_to_expect .card {
+        grid-template-columns: 1fr;
+      }
+      .What_to_expect .figure_img {
+        display: none;
+      }
+
+      .What_to_expect .content {
+        padding: 6rem 1rem;
+        margin-top: 4rem;
+        gap: 1rem;
+        z-index: 10;
+        position: relative;
+      }
+
+      .What_to_expect .content::before {
+        content: "";
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 220px;
+        height: 100px;
+        background-image: url("../icons/pattern.svg");
+        background-repeat: repeat;
+        z-index: 0;
+        opacity: 0.6;
+      }
+    }
+    .What_to_expect .figure_img {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      align-self: end;
+    }
+
+    .What_to_expect .figure_img img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 20px;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+    .What_to_expect .figure_img::after {
+      content: "";
+      position: absolute;
+      top: -1.4rem;
+      left: -1.6rem;
+      width: 120px;
+      height: 120px;
+      background: var(--primary-green);
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    .What_to_expect .figure_img::before {
+      content: "";
+      position: absolute;
+      top: -2.8rem;
+      left: -2.8rem;
+      width: 220px;
+      height: 219px;
+      background-image: url("../icons/pattern.svg");
+      background-repeat: repeat;
+      z-index: 0;
+      opacity: 0.6;
+    }
+    .What_to_expect .content {
+      margin: 0 2rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .What_to_expect li {
+      list-style: none;
+    }
+
+    .What_to_expect li p {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .What_to_expect li:has(p) p::before {
+      content: url("../icons/checkmark.svg");
+    }
+
+    /*  SECTION 2: FINANCIAL PROJECTIONS       */
+
+    .FinancialProjections {
+      height: fit-content;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      background-color: var(--grey-white);
+      padding: 4rem 0 0rem 0;
+      display: grid;
+      grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+      overflow: hidden;
+    }
+    .FinancialProjections .wrapper {
+      grid-column: 2/-2;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      position: relative;
+      container-type: inline-size;
+      container-name: wrapper;
+    }
+
+    .FinancialProjections .content {
+      padding: 4rem 2rem 0 2rem;
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr;
+      position: relative;
+      align-items: center;
+      gap: 2rem;
+    }
+    .FinancialProjections .content h2 {
+      grid-column: 1/3;
+    }
+    .FinancialProjections .content p {
+      grid-column: 1/3;
+      max-width: 600px;
+    }
+    .FinancialProjections .buttons {
+      grid-column: 3/4;
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      align-items: baseline;
+    }
+    .FinancialProjections .buttons button {
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: var(--primary-black);
+      fill: var(--secondary-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .FinancialProjections .buttons button:hover {
+      background: var(--primary-yellow, #ffcc4a);
+    }
+
+    .FinancialProjections .buttons img {
+      width: 20px;
+      height: 20px;
+      filter: invert(100%);
+      transition: filter 0.3s;
+    }
+    .FinancialProjections .buttons button:hover img {
+      filter: invert(0%);
+    }
+    .FinancialProjections .scroll {
+      scroll-snap-type: x mandatory;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      grid-column: 1/-1;
+    }
+    .FinancialProjections .scroll::-webkit-scrollbar {
+      display: none;
+    }
+    @container (width < 900px) {
+      .FinancialProjections .buttons {
+        display: none;
+      }
+
+      .FinancialProjections .scroll {
+        padding-bottom: 100px;
+      }
+    }
+
+    /*  SECTION 3: EXPERIENCE     */
+    .Experience {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      background-color: var(--primary-yellow);
+      padding: 5rem 0 5rem 0;
+
+      overflow: hidden;
+    }
+    .Experience .wrapper {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+    }
+    .Experience .inner {
+      grid-column: 2;
+      place-items: center;
+    }
+    .Experience .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .Experience .stats {
+      display: flex;
+      gap: 2rem;
+      width: min(400px, 100% - 1rem);
+      align-items: center;
+    }
+    .Experience .stats_card {
+      display: flex;
+      flex-direction: column;
+      height: 150%;
+      gap: 1rem;
+      width: min(400px, 100% - 1rem);
+      justify-content: flex-end;
+      text-align: center;
+      align-items: center;
+    }
+    .Experience .stat {
+      container: stat/inline-size;
+      --actualPercent: calc(var(--percent) * 1%);
+      --border-width: 5px;
+      aspect-ratio: 1;
+      width: 150px;
+      border-radius: calc(Infinity * 1px);
+      border: var(--border-width) solid transparent;
+      background:
+        conic-gradient(var(--primary-yellow)) padding-box,
+        conic-gradient(var(--secondary-white) var(--actualPercent), #daae3c 0)
+          border-box;
+
+      display: grid;
+      counter-reset: c var(--percent);
+
+      &::before,
+      &::after {
+        grid-area: 1 / 1;
+      }
+
+      &::after {
+        content: counter(c, decimal-leading-zero) "%";
+        place-self: center;
+        font-size: 30cqw;
+        font-variant-numeric: tabular-nums;
+      }
+
+      &::before {
+        content: "";
+        aspect-ratio: 1;
+        border-radius: 99px;
+        width: 20px;
+        offset-path: border-box;
+        offset-distance: var(--actualPercent);
+        offset-anchor: 50% calc(50% - var(--border-width) / 2);
+        background: var(--primary-black);
+        border: 3px solid var(--secondary-white);
+      }
+    }
+    @media (max-width: 700px) {
+      .Experience .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .Experience .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        gap: 2rem;
+      }
+      .Experience .stats {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: min(400px, 100% - 1rem);
+        align-items: center;
+        margin-top: 2rem;
+      }
+    }
+
+    /*  SECTION 4: CORE VALUES      */
+    .CoreValues {
+      //height: fit-content;
+      background-color: var(--primary-black);
+      color: var(--secondary-white);
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: 4rem 0 0rem 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+    }
+    .CoreValues .wrapper {
+      grid-column: 2/-2;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      position: relative;
+    }
+    .CoreValues .content {
+      padding: 4rem 2rem 0 2rem;
+      display: grid;
+      grid-template-columns: 2fr 2fr 2fr;
+      grid-row: auto;
+      position: relative;
+      align-items: center;
+      gap: 2rem;
+    }
+    .CoreValues .text {
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+    .CoreValues .text p {
+      max-width: 600px;
+    }
+    .CoreValues .buttons {
+      grid-column: 3/4;
+      grid-row: 2/3;
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      align-items: baseline;
+    }
+    .CoreValues .buttons a {
+      display: inline-block;
+      background-color: var(--secondary-white);
+      color: var(--secondary-black);
+      padding: 0.5rem 1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .CoreValues .buttons a:hover {
+      background-color: var(--primary-yellow);
+      color: var(--primary-black);
+    }
+    .CoreValues .Cards {
+      grid-column: 2;
+
+      padding: 0 2rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    /*  SECTION 5: CONTACT        */
+    .Contact {
+      container-type: inline-size;
+      container-name: main;
+      margin: 5rem 0 5rem 0;
+    }
+    .Contact li {
+      list-style: none;
+    }
+    .Contact .wrapper {
+      container-type: inline-size;
+    }
+    .Contact .content {
+      display: grid;
+      gap: 2rem;
+      position: relative;
+      max-width: 100%;
+    }
+    @container (width > 768px) {
+      .Contact .content {
+        grid-template-columns: 2fr 3fr;
+      }
+    }
+    .Contact .figure_card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      position: relative;
+      margin-top: 3rem;
+    }
+    .Contact .img_1 {
+      grid-column: 1/2;
+      grid-row: 1/3;
+    }
+
+    .Contact .img_2 {
+      grid-column: 2/3;
+      grid-row: 1;
+    }
+
+    .Contact .img_3 {
+      grid-column: 2/3;
+      grid-row: 2;
+    }
+    .Contact .figure_card img {
+      max-width: auto;
+      height: 100%;
+      border-radius: 20px;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+    .figure_card::after {
+      content: "";
+      position: absolute;
+      bottom: -1.5rem;
+      left: -2.75rem;
+      width: 270px;
+      height: 150px;
+      background: var(--primary-green);
+      border-radius: 20px;
+      z-index: 1;
+    }
+    .figure_card::before {
+      content: "";
+      position: absolute;
+      top: -2.75rem;
+      right: -4.5rem;
+      width: 290px;
+      height: 320px;
+      background-image: url("../icons/pattern.svg");
+      background-repeat: repeat;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    @container (width < 700px) {
+      .Contact .content {
+        grid-template-columns: 1fr;
+      }
+
+      .Contact .figure_card {
+        display: none;
+      }
+
+      .Contact .text {
+        padding: 4rem 2rem;
+        margin-top: 2rem;
+        gap: 1rem;
+        z-index: 10;
+        position: relative;
+      }
+
+      .Contact .text::before {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        width: 220px;
+        height: 100px;
+        background-image: url("../icons/pattern.svg");
+        background-repeat: repeat;
+        z-index: 0;
+        opacity: 0.6;
+      }
+    }
+  }
+</style>
