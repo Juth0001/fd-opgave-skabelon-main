@@ -83,7 +83,7 @@ import EmployeCard from "@components/EmployeCard.astro";
       </div>
     </section>
     <!-- Section 3: our team -->
-    <section class="CoreValues">
+    <section class="our_team">
       <div class="wrapper">
         <div class="content">
           <div class="text">
@@ -126,6 +126,13 @@ import EmployeCard from "@components/EmployeCard.astro";
             platform="some"
           />
         </div>
+      </div>
+    </section>
+
+    <!-- Section 4: costumer_questions-->
+    <section class="costumer_questions">
+      <div class="wrapper">
+        <div class="content"></div>
       </div>
     </section>
   </main>
@@ -279,7 +286,7 @@ import EmployeCard from "@components/EmployeCard.astro";
       color: var(--primary-black);
       width: 100vw;
       margin-left: calc(-50vw + 50%);
-      margin-bottom: 4rem;
+
       padding: 4rem 0 2rem 0;
       overflow: hidden;
       display: grid;
@@ -337,26 +344,27 @@ import EmployeCard from "@components/EmployeCard.astro";
       flex-direction: column;
     }
     /*  SECTION 3: our team      */
-    .CoreValues {
-      background-color: var(--grey-white);
+    .our_team {
       color: var(--primary-black);
       width: 100vw;
       margin-left: calc(-50vw + 50%);
-      margin-bottom: 4rem;
+
       padding: 4rem 0 2rem 0;
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+      place-items: center;
+      container-type: inline-size;
     }
-    .CoreValues .wrapper {
-      grid-column: 2/-2;
+    .our_team .wrapper {
+      grid-column: 2;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       gap: 3rem;
       position: relative;
-      margin: 0 0 4rem 0;
     }
-    .CoreValues .content {
+    .our_team .content {
       padding: 4rem 2rem 0 2rem;
       display: grid;
       grid-template-columns: 2fr 2fr 2fr;
@@ -365,22 +373,30 @@ import EmployeCard from "@components/EmployeCard.astro";
       align-items: center;
       gap: 2rem;
     }
-    .CoreValues .text {
+    .our_team .text {
       grid-column: 1/3;
       grid-row: 1/3;
     }
-    .CoreValues .text p {
+    .our_team .text p {
       max-width: 600px;
     }
 
-    .CoreValues .content {
+    .our_team .content {
       grid-column: 2;
 
       padding: 0 2rem 0 2rem;
     }
-    .CoreValues .wrapper .Cards {
+    .our_team .wrapper .Cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+    @container (width < 700px) {
+      .our_team .Cards {
+        grid-template-columns: 1fr;
+        place-items: center;
+      }
+    }
+
+    /*  SECTION 4: costumer_questions     */
   }
 </style>
