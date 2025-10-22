@@ -4,18 +4,29 @@ import data from "@data/employees.json";
 const { name, description, title, url, platform, img, slug } = Astro.props;
 ---
 
-<div class="employeeCard">
-    <div class="portrait">
-        <img src={img} alt={slug} />
+<div class="wrapper">
+    <div class="employeeCard">
+        <div class="portrait">
+            <div>
+                <img src={img} alt={slug} class="portrait_img" />
+            </div>
+            <div class="content">
+                <p class="title">{title}</p>
 
-        <p class="title">{title}</p>
-
-        <h6>{name}</h6>
-        <p>{description}</p>
-        <div class="icons">
-            <a href={url}><img src="/icons/instagram.svg" alt={platform} /></a>
-            <a href={url}><img src="/icons/facebook.svg" alt={platform} /></a>
-            <a href={url}><img src="/icons/twitter.svg" alt={platform} /></a>
+                <h6>{name}</h6>
+                <p>{description}</p>
+                <div class="icons">
+                    <a href={url}
+                        ><img src="/icons/instagram.svg" alt={platform} /></a
+                    >
+                    <a href={url}
+                        ><img src="/icons/facebook.svg" alt={platform} /></a
+                    >
+                    <a href={url}
+                        ><img src="/icons/twitter.svg" alt={platform} /></a
+                    >
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -41,8 +52,7 @@ const { name, description, title, url, platform, img, slug } = Astro.props;
 
             position: relative;
         }
-
-        .portrait img {
+        .portrait div img {
             border-radius: 20px;
         }
         .title {
@@ -74,17 +84,60 @@ const { name, description, title, url, platform, img, slug } = Astro.props;
                 color: var(--primary-black);
             }
         }
-        .portrait p {
+        .content p {
             font-size: 13px;
             margin: 0 0.5rem 0 0.5rem;
         }
         div.icons {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
         }
         .icons a img {
             width: 24px;
             height: 23px;
+        }
+        @media (max-width: 760px) {
+            .portrait {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+                max-width: 100%;
+                height: fit-content;
+                gap: 1rem;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+                height: 100%;
+                color: var(--primary-black);
+            }
+            div.icons {
+                display: flex;
+                justify-content: center;
+            }
+            .icons a img {
+                width: 24px;
+                height: 23px;
+            }
+            .title {
+                position: static;
+                top: 12rem;
+                left: 3rem;
+                z-index: 10;
+            }
+        }
+        @media (max-width: 507px) {
+            .title {
+                position: absolute;
+                top: 12rem;
+                left: 3rem;
+                z-index: 10;
+            }
         }
     }
 </style>

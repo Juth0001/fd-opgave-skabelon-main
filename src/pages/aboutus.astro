@@ -5,6 +5,7 @@ import "@styles/global.css";
 import Hero from "@components/Hero.astro";
 import GlobalCard from "@components/GlobalCard.astro";
 import EmployeCard from "@components/EmployeCard.astro";
+import FaqCard from "@components/FaqCard.astro";
 ---
 
 <Layout>
@@ -138,7 +139,7 @@ import EmployeCard from "@components/EmployeCard.astro";
             <h2>Customer Questions</h2>
           </div>
           <div class="questions">
-            <!--card her. inde i carded skal info hentes fra faq.json -->
+            <FaqCard />
           </div>
         </div>
       </div>
@@ -399,12 +400,29 @@ import EmployeCard from "@components/EmployeCard.astro";
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
     @container (width < 700px) {
-      .our_team .Cards {
+      .our_team .wrapper .Cards {
+        gap: 3rem;
         grid-template-columns: 1fr;
         place-items: center;
       }
     }
 
     /*  SECTION 4: costumer_questions     */
+    .costumer_questions {
+      background-color: var(--secondary-grey);
+      border-radius: 20px;
+      padding: 10rem;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .text {
+      text-align: center;
+    }
+    .questions {
+      margin: 0.5rem 0;
+    }
   }
 </style>

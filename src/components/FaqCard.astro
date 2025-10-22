@@ -1,0 +1,55 @@
+---
+import "@styles/main.css";
+import "@styles/global.css";
+
+import data from "@data/faq.json";
+---
+<section class="container">
+    
+        {
+            data.faq.map((faq) => (
+                <details name="accordion">
+                    <summary>{faq.question}</summary>
+
+                    <div>
+                        <p>{faq.answer}</p>
+                    </div>
+                </details>
+                <hr/>
+            ))
+        }
+    </div>
+</section>
+
+
+<style>
+    @layer components{
+        
+
+        details{
+            summary{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                font-weight: 600;
+                margin: 1rem 0 1rem 0;
+               
+
+                + div p{
+                    margin-top: 1rem;
+                }
+            }
+        }
+        summary::after{
+            content: "+";
+            transition: transform 5s;
+        }
+        [open] summary::after{
+            content: "-";
+        }
+        
+    }
+</style>
+
+
