@@ -6,6 +6,8 @@ import HeroAbout from "@components/HeroAbout.astro";
 import GlobalCard from "@components/GlobalCard.astro";
 import EmployeCard from "@components/EmployeCard.astro";
 import FaqCard from "@components/FaqCard.astro";
+import { Image } from "astro:assets";
+import teamwork2 from "@assets/images/teamwork2.png";
 ---
 
 <Layout>
@@ -35,7 +37,7 @@ import FaqCard from "@components/FaqCard.astro";
             </li>
           </div>
           <figure class="figure_img">
-            <img src="public/images/employees/teamwork2.webp" alt="teamwork" />
+            <Image src={teamwork2} alt="img" />
           </figure>
         </div>
         <section class="stats">
@@ -100,7 +102,7 @@ import FaqCard from "@components/FaqCard.astro";
         </div>
         <div class="Cards">
           <EmployeCard
-            img="src/assets/images/sarah.webp"
+            img="public/images/employees/sarah.webp"
             slug="sarah-jasmine"
             title="CEO at Company"
             name="Sarah Jasmine"
@@ -109,7 +111,7 @@ import FaqCard from "@components/FaqCard.astro";
             platform="some"
           />
           <EmployeCard
-            img="src/assets/images/john.webp"
+            img="public/images/employees/john.webp"
             slug="John Carter"
             title="Manager"
             name="John Carter"
@@ -118,7 +120,7 @@ import FaqCard from "@components/FaqCard.astro";
             platform="some"
           />
           <EmployeCard
-            img="src/assets/images/daisy.webp"
+            img="public/images/employees/daisy.webp"
             slug="Daisy Stella"
             title="Visionary"
             name="Daisy Stella"
