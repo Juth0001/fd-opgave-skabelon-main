@@ -2,12 +2,14 @@
 import Layout from "@layouts/Layout.astro";
 
 import HeroStudy from "@components/HeroStudy.astro";
+import { Image } from "astro:assets";
+import caseimg from "@assets/images/caseimg.webp";
 ---
 
 <Layout>
     <HeroStudy />
     <section class="case_img">
-        <img src="src/data/images/caseimg.webp" alt="case img" />
+        <Image src={caseimg} alt="img" />
         <div class="wrapper">
             <div class="content">
                 <div class="info">
@@ -83,7 +85,7 @@ import HeroStudy from "@components/HeroStudy.astro";
             </p>
         </div>
         <div class="overview_img">
-            <img src="src/data/images/storyboard.webp" alt="" />
+            <img src="src/assets/images/storyboard.webp" alt="" />
         </div>
         <div class="text">
             <h4>Project result</h4>
