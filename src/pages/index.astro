@@ -6,6 +6,8 @@ import GlobalCard from "@components/GlobalCard.astro";
 import ContactCard from "@components/ContactCard.astro";
 import "@styles/main.css";
 import "@styles/global.css";
+import { Image } from "astro:assets";
+import teamwork from "@assets/images/teamwork.png";
 ---
 
 <Layout>
@@ -17,6 +19,7 @@ import "@styles/global.css";
         <div class="card">
           <figure class="figure_img">
             <img src="../src/data/images/teamwork.png" alt="teamwork" />
+            <Image src={teamwork} alt="img" />
           </figure>
           <div class="content">
             <p>WE'LL WORK WITH YOU</p>
