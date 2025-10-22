@@ -211,5 +211,14 @@ import HeroStudy from "@components/HeroStudy.astro";
         .overview img {
             align-self: center;
         }
+        @media (max-width: 800px) {
+            .case_img,
+            .overview {
+                padding: 0 2rem 0 2rem;
+            }
+            .case_img {
+                margin-top: 0;
+            }
+        }
     }
 </style>
