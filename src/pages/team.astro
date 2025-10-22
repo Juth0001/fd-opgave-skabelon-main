@@ -8,7 +8,8 @@ import "@styles/global.css";
 
 <Layout>
     <HeroTeam />
-    <section class="our_team">
+
+    <section>
         <div class="wrapper">
             <div class="content">
                 <div class="text">
@@ -27,9 +28,8 @@ import "@styles/global.css";
                 </div>
             </div>
         </div>
-    </section>
-    <section class="our_team">
-        <div class="Cards">
+
+        <div class="our_team">
             <TeamGallerie />
         </div>
     </section>
@@ -37,12 +37,7 @@ import "@styles/global.css";
 
 <style>
     @layer components {
-        .our_team {
-            color: var(--primary-black);
-            display: grid;
-            grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
-        }
-        .our_team .wrapper {
+        .wrapper {
             grid-column: 2;
             display: flex;
             flex-direction: column;
@@ -51,7 +46,7 @@ import "@styles/global.css";
             margin: 0 0 4rem 0;
             position: relative;
         }
-        .our_team .content {
+        .content {
             padding: 4rem 2rem 0 2rem;
             display: grid;
             grid-template-columns: 2fr 2fr 2fr;
@@ -60,14 +55,14 @@ import "@styles/global.css";
             align-items: center;
             gap: 2rem;
         }
-        .our_team .text {
+        .text {
             grid-column: 1/3;
             grid-row: 1/3;
         }
-        .our_team .text p {
+        .text p {
             max-width: 600px;
         }
-        .our_team .buttons {
+        .buttons {
             grid-column: 3/4;
             grid-row: 2/3;
             display: flex;
@@ -75,7 +70,7 @@ import "@styles/global.css";
             justify-content: flex-end;
             align-items: baseline;
         }
-        .our_team .buttons a {
+        .buttons a {
             display: inline-block;
             background-color: var(--primary-black);
             color: var(--secondary-white);
@@ -83,21 +78,22 @@ import "@styles/global.css";
             transition: background-color 0.2s ease;
         }
 
-        .our_team .buttons a:hover {
+        .buttons a:hover {
             background-color: var(--primary-yellow);
             color: var(--primary-black);
         }
-        .our_team .Cards {
+
+        .our_team {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 2rem;
+            grid-template-columns: repeat(3, 300px);
+            justify-content: center;
+            gap: 10%;
+            margin-bottom: 5rem;
         }
-        @media (min-width: 900px) {
-            .Cards {
-                grid-template-columns: repeat(3, 1fr);
+        @media (max-width: 760px) {
+            .our_team {
+                grid-template-columns: 1fr;
+                margin: 0 0 5rem 0;
             }
         }
     }

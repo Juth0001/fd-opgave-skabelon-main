@@ -5,47 +5,49 @@ import "@styles/global.css";
 import data from "@data/employees.json";
 ---
 
-<div class="wrapper">
-    {
-        data.values.map((values) => (
-            <div class="employeeCard">
-                <div class="portrait">
-                    <div>
-                        <img
-                            src={values.img}
-                            alt={values.slug}
-                            class="portrait_img"
-                        />
-                    </div>
-                    <div class="content">
-                        <p class="title">{values.title}</p>
+{
+    data.values.map((values) => (
+        <div class="employeeCard">
+            <a href={`/employee/${values.id.toString()}`} class="portrait">
+                <div>
+                    <img
+                        src={values.img}
+                        alt={values.slug}
+                        class="portrait_img"
+                    />
+                </div>
+                <div class="content">
+                    <p class="title">{values.title}</p>
 
-                        <h6>{values.name}</h6>
-                        <p>{values.description}</p>
-                        <div class="icons">
-                            {values.social_links.map((link, index) => (
-                                <a href={link.url}>
-                                    <img
-                                        src={`/icons/${link.icon}.svg`}
-                                        alt={link.platform}
-                                    />
-                                </a>
-                            ))}
-                        </div>
+                    <h6>{values.name}</h6>
+                    <p>{values.description}</p>
+                    <div class="icons">
+                        {values.social_links.map((link, index) => (
+                            <div class="some">
+                                <img
+                                    src={`/icons/${link.icon}.svg`}
+                                    alt={link.platform}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </div>
-        ))
-    }
-</div>
+            </a>
+        </div>
+    ))
+}
+
 <style>
     @layer components {
+        .employeeCard {
+            max-width: 300px;
+        }
         .portrait {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100%;
+
             padding: 1rem;
             gap: 1rem;
             border-radius: 20px;
@@ -99,7 +101,7 @@ import data from "@data/employees.json";
             display: flex;
             justify-content: center;
         }
-        .icons a img {
+        .icons .some img {
             width: 24px;
             height: 23px;
         }
@@ -108,11 +110,14 @@ import data from "@data/employees.json";
                 flex-direction: row;
                 align-items: flex-start;
                 text-align: left;
-                max-width: 100%;
+
                 height: fit-content;
-                gap: 1rem;
+
                 padding: 1rem;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .employeeCard {
+                max-width: 100%;
             }
             .content {
                 display: flex;
@@ -120,14 +125,16 @@ import data from "@data/employees.json";
                 justify-content: space-between;
                 align-items: center;
                 text-align: center;
+                gap: 1rem;
                 height: 100%;
                 color: var(--primary-black);
+                width: 300%;
             }
             div.icons {
                 display: flex;
                 justify-content: center;
             }
-            .icons a img {
+            .icons .some img {
                 width: 24px;
                 height: 23px;
             }
@@ -137,13 +144,8 @@ import data from "@data/employees.json";
                 left: 3rem;
                 z-index: 10;
             }
-        }
-        @media (max-width: 507px) {
-            .title {
-                position: absolute;
-                top: 12rem;
-                left: 3rem;
-                z-index: 10;
+            .portrait div img {
+                max-width: 100%;
             }
         }
     }
