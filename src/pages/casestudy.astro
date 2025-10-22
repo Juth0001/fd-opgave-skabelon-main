@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import HeroStudy from "@components/HeroStudy.astro";
 import { Image } from "astro:assets";
 import caseimg from "@assets/images/caseimg.webp";
+import storyboard from "@assets/images/storyboard.webp";
 ---
 
 <Layout>
@@ -85,7 +86,7 @@ import caseimg from "@assets/images/caseimg.webp";
             </p>
         </div>
         <div class="overview_img">
-            <img src="src/assets/images/storyboard.webp" alt="" />
+            <Image src={storyboard} alt="img" />
         </div>
         <div class="text">
             <h4>Project result</h4>
