@@ -32,7 +32,7 @@
       "name": "John Carter",
       "title": "Manager",
       "description": "Expert in operational efficiency, ensuring smooth processes and exceptional team performance.",
-      "description_long": "John Carter is a seasoned manager with a proven track record of success. He is known for his expertise in operational efficiency and his ability to drive exceptional team performance. John is dedicated to ensuring smooth processes and delivering results that exceed expectations. His leadership style er karakteriseret af fokus på samarbejde, kommunikation og kontinuerlig forbedring. Johns engagement har givet ham et ry som en respekteret leder.",
+      "description_long": "John Carter is a seasoned manager with a proven track record of success. He is known for his expertise in operational efficiency and his ability to drive exceptional team performance. John is dedicated to ensuring smooth processes and delivering results that exceed expectations. Hans ledelsesstil er karakteriseret af fokus på samarbejde, kommunikation og kontinuerlig forbedring. Johns engagement har givet ham et ry som en respekteret leder.",
       "past_experience": "John Carter har stor erfaring med at lede teams og projekter på tværs af brancher. Hans baggrund inden for operations management gør ham i stand til at optimere processer og ressourcer. Hans evne til at motivere og engagere teammedlemmer har ført til høj produktivitet. John er kendt for sin strategiske tænkning og problemløsning, og han brænder for at levere resultater.",
       "social_links": [
         {
@@ -52,14 +52,14 @@
         }
       ],
       "slug": "john-carter",
-      "img": "../images/employees/john.webp"
+      "img": "/images/employees/john.webp"
     },
     {
       "id": 3,
       "name": "Daisy Stella",
       "title": "Visionary",
       "description": "Driving innovation and leadership with a focus on strategic growth and impactful decisions.",
-      "description_long": "Daisy Stella is a visionary leader with a passion for driving innovation and growth. She is known for her strategic thinking and ability to make impactful decisions that drive results. Daisy's leadership style is characterized by her focus on collaboration, creativity, and continuous improvement. She is dedicated to empowering her team to achieve their best and driving meaningful change within the organization. Daisy's vision and commitment to excellence have made her a respected figure in the industry.",
+      "description_long": "Daisy Stella is a visionary leader with a passion for driving innovation and growth. Hun er kendt for sin strategiske tænkning og evne til at tage beslutninger, der skaber resultater. Daisy's ledelsesstil er karakteriseret ved fokus på samarbejde, kreativitet og kontinuerlig forbedring.",
       "past_experience": "Daisy Stella har en alsidig baggrund inden for marketing, forretningsudvikling og strategisk planlægning. Hendes erfaring med at lede tværfunktionelle teams og drive succesfulde initiativer har givet hende evnen til at tackle komplekse udfordringer og levere resultater.",
       "social_links": [
         {
@@ -86,7 +86,7 @@
       "name": "Maya Elizabeth",
       "title": "Strategist",
       "description": "Crafting tailored strategies to empower business success and maximize market potential.",
-      "description_long": "Maya Elizabeth is a strategic thinker with a talent for crafting tailored strategies that empower business success. Hun er kendt for at analysere markedstendenser og udvikle innovative løsninger, der driver vækst. Hendes evne til at omsætte strategi til handling har hjulpet mange virksomheder med at nå deres fulde potentiale.",
+      "description_long": "Maya Elizabeth is a strategic thinker with a talent for crafting tailored strategies that empower business success. Hun er kendt for at analysere markedstendenser og udvikle innovative løsninger, der driver vækst.",
       "past_experience": "Maya Elizabeth har erfaring inden for marketing, forretningsudvikling og strategisk planlægning. Hendes evne til at identificere markedsmuligheder og skabe skræddersyede løsninger har resulteret i målbar vækst for hendes kunder.",
       "social_links": [
         {
@@ -113,7 +113,7 @@
       "name": "Ryan Jackson",
       "title": "Director",
       "description": "Leading with vision and precision to align organizational goals with long-term growth.",
-      "description_long": "Ryan Jackson is a dynamic director known for his strategic vision and precision in aligning organizational goals with long-term growth. Han er dedikeret til at drive innovation og excellence i sit team og skabe en kultur med fokus på samarbejde og kontinuerlig forbedring.",
+      "description_long": "Ryan Jackson is a dynamic director known for his strategic vision and precision in aligning organizational goals with long-term growth. Han er dedikeret til at drive innovation og excellence i sit team.",
       "past_experience": "Ryan Jackson har erfaring med projektledelse, forretningsudvikling og strategisk planlægning. Hans evne til at tænke strategisk og eksekvere med præcision har ført til betydelig vækst og succes.",
       "social_links": [
         {
