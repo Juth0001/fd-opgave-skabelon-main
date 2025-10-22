@@ -1,0 +1,150 @@
+---
+import "@styles/main.css";
+import "@styles/global.css";
+
+import data from "@data/employees.json";
+---
+
+<div class="wrapper">
+    {
+        data.values.map((values) => (
+            <div class="employeeCard">
+                <div class="portrait">
+                    <div>
+                        <img
+                            src={values.img}
+                            alt={values.slug}
+                            class="portrait_img"
+                        />
+                    </div>
+                    <div class="content">
+                        <p class="title">{values.title}</p>
+
+                        <h6>{values.name}</h6>
+                        <p>{values.description}</p>
+                        <div class="icons">
+                            {values.social_links.map((link, index) => (
+                                <a href={link.url}>
+                                    <img
+                                        src={`/icons/${link.icon}.svg`}
+                                        alt={link.platform}
+                                    />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ))
+    }
+</div>
+<style>
+    @layer components {
+        .portrait {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 1rem;
+            gap: 1rem;
+            border-radius: 20px;
+            text-align: center;
+            color: var(--primary-black);
+
+            width: 100%;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+            position: relative;
+        }
+        .portrait div img {
+            border-radius: 20px;
+        }
+        .title {
+            position: absolute;
+            top: 17rem;
+            right: 3rem;
+            z-index: 10;
+
+            width: fit-content;
+            border-radius: 20px;
+            background: var(--primary-black);
+            color: var(--secondary-white);
+            font-size: 14px;
+            padding: 0 14px;
+        }
+        .title:hover {
+            background: var(--secondary-white);
+            color: var(--primary-black);
+        }
+
+        .portrait:hover {
+            transform: translateY(10px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+            background-color: var(--secondary-white);
+            color: var(--primary-black);
+
+            .title {
+                background: var(--primary-yellow);
+                color: var(--primary-black);
+            }
+        }
+        .content p {
+            font-size: 13px;
+            margin: 0 0.5rem 0 0.5rem;
+        }
+        div.icons {
+            display: flex;
+            justify-content: center;
+        }
+        .icons a img {
+            width: 24px;
+            height: 23px;
+        }
+        @media (max-width: 760px) {
+            .portrait {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+                max-width: 100%;
+                height: fit-content;
+                gap: 1rem;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                text-align: center;
+                height: 100%;
+                color: var(--primary-black);
+            }
+            div.icons {
+                display: flex;
+                justify-content: center;
+            }
+            .icons a img {
+                width: 24px;
+                height: 23px;
+            }
+            .title {
+                position: static;
+                top: 12rem;
+                left: 3rem;
+                z-index: 10;
+            }
+        }
+        @media (max-width: 507px) {
+            .title {
+                position: absolute;
+                top: 12rem;
+                left: 3rem;
+                z-index: 10;
+            }
+        }
+    }
+</style>

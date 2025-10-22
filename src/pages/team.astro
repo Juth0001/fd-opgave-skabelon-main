@@ -1,0 +1,104 @@
+---
+import Layout from "@layouts/Layout.astro";
+import HeroTeam from "@components/HeroTeam.astro";
+import TeamGallerie from "@components/TeamGallerie.astro";
+import "@styles/main.css";
+import "@styles/global.css";
+---
+
+<Layout>
+    <HeroTeam />
+    <section class="our_team">
+        <div class="wrapper">
+            <div class="content">
+                <div class="text">
+                    <h2>Meet Our Great Team</h2>
+                    <p>
+                        Welcome to our amazing team! We are a group of
+                        passionate individuals dedicated to excellence and
+                        innovation. Each member brings unique skills and
+                        experiences, working together to achieve our goals. Join
+                        us as we embark on exciting projects and create lasting
+                        impacts.
+                    </p>
+                </div>
+                <div class="buttons">
+                    <a href="#0">Join our team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="our_team">
+        <div class="Cards">
+            <TeamGallerie />
+        </div>
+    </section>
+</Layout>
+
+<style>
+    @layer components {
+        .our_team {
+            color: var(--primary-black);
+            display: grid;
+            grid-template-columns: 1fr minmax(0, var(--content-width, 1200px)) 1fr;
+        }
+        .our_team .wrapper {
+            grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            position: relative;
+            margin: 0 0 4rem 0;
+            position: relative;
+        }
+        .our_team .content {
+            padding: 4rem 2rem 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+            grid-row: auto;
+            position: relative;
+            align-items: center;
+            gap: 2rem;
+        }
+        .our_team .text {
+            grid-column: 1/3;
+            grid-row: 1/3;
+        }
+        .our_team .text p {
+            max-width: 600px;
+        }
+        .our_team .buttons {
+            grid-column: 3/4;
+            grid-row: 2/3;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            align-items: baseline;
+        }
+        .our_team .buttons a {
+            display: inline-block;
+            background-color: var(--primary-black);
+            color: var(--secondary-white);
+            padding: 0.5rem 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .our_team .buttons a:hover {
+            background-color: var(--primary-yellow);
+            color: var(--primary-black);
+        }
+        .our_team .Cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        @media (min-width: 900px) {
+            .Cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+</style>
